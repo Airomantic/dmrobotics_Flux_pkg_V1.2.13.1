@@ -1,0 +1,27 @@
+# Remote IDE / editor runtime
+.vscode-server/
+.qoder-server/
+
+# User caches
+.cache/
+.local/
+.config/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+
+# Archives / large backup files
+*.zip
+*.tar
+*.tar.gz
+
+# Logs
+*.log

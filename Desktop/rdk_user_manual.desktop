@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Link
+Name=Documentation-CN
+Name[zh_CN]=开发者手册中文版
+Comment=RDK User Manual
+Icon=/usr/share/backgrounds/xfce/rdk_logo.png
+URL=https://developer.d-robotics.cc/rdk_doc/RDK

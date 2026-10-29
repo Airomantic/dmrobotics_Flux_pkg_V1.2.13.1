@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.1
+Type=Link
+Name=Community-EN
+Name[zh_CN]=开发者社区英文版
+Comment=Developer and forums
+Icon=/usr/share/backgrounds/xfce/rdk_logo.png
+URL=https://developer.d-robotics.cc/en

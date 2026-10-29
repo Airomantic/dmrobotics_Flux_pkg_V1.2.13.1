@@ -1,0 +1,17 @@
+{
+  "regionEnv": "cn",
+  "regionConfig": {
+    "preferredCenterNode": {
+      "region": "center",
+      "endpoint": "https://center.qoder.sh",
+      "latency": 3600000
+    },
+    "preferredNesNode": {
+      "region": "api2",
+      "endpoint": "https://api2.qoder.sh",
+      "latency": 3600000
+    }
+  },
+  "notificationTime": {},
+  "lastWorktreeCleanupTime": 0
+}

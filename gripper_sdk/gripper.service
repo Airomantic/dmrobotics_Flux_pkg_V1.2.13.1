@@ -1,0 +1,16 @@
+[Unit]
+Description=DM Gripper gRPC Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cftc
+WorkingDirectory=/home/cftc/gripper_sdk
+ExecStart=/usr/bin/python /home/cftc/gripper_sdk/server.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package gripper;
+
+service GripperService {
+  rpc Connect (ConnectConfig) returns (Response);
+  rpc Disconnect (google.protobuf.Empty) returns (Response);
+
+  rpc Enable (google.protobuf.Empty) returns (Response);
+  rpc Disable (google.protobuf.Empty) returns (Response);
+  rpc Initialization (google.protobuf.Empty) returns (Response);
+  rpc Home (google.protobuf.Empty) returns (Response);
+  rpc Open (google.protobuf.Empty) returns (Response);
+  rpc Close (google.protobuf.Empty) returns (Response);
+  rpc SetTargetPosition (ValueRequest) returns (Response);
+  rpc SetTargetForce (ValueRequest) returns (Response);
+  rpc SetTargetSpeed (ValueRequest) returns (Response);
+  rpc SetJog (ValueRequest) returns (Response);
+  rpc SetFollowMode (ValueRequest) returns (Response);
+  rpc Stop (google.protobuf.Empty) returns (Response);
+  rpc Resume (google.protobuf.Empty) returns (Response);
+  rpc ClearError (google.protobuf.Empty) returns (Response);
+
+  rpc GetCurrentPosition (google.protobuf.Empty) returns (ValueResponse);
+  rpc GetInitState (google.protobuf.Empty) returns (ValueResponse);
+  rpc GetCurrentForce (google.protobuf.Empty) returns (ValueResponse);
+  rpc GetAllState (google.protobuf.Empty) returns (StateResponse);
+}
+
+message ConnectConfig {
+  string channel = 1;
+  int32 motor_id = 2;
+  double read_interval_s = 3;
+  double read_timeout_s = 4;
+  int32 retry_count = 5;
+  double stale_timeout_s = 6;
+  double command_min_interval_s = 7;
+}
+
+message ValueRequest {
+  int32 value = 1;
+}
+
+message Response {
+  bool success = 1;
+  string message = 2;
+  StateResponse state = 3;
+}
+
+message ValueResponse {
+  int32 value = 1;
+  bool success = 2;
+  string message = 3;
+  StateResponse state = 4;
+}
+
+message StateResponse {
+  bool valid = 1;
+  int32 init_state = 2;
+  int32 grip_state = 3;
+  int32 position = 4;
+  int32 speed = 5;
+  int32 current = 6;
+  int32 error = 7;
+  string message = 8;
+  double update_age_ms = 9;
+  bool stale = 10;
+  string init_state_text = 11;
+  string grip_state_text = 12;
+  string error_text = 13;
+  bool connected = 14;
+}
